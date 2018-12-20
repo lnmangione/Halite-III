@@ -1,5 +1,3 @@
-package benchmark;
-
 import hlt.*;
 
 import java.util.*;
@@ -8,7 +6,7 @@ import java.util.*;
  * This benchmark bot has basic navigation optimizations (ships don't collide with spawns or deadlock)
  * Ships harvest from the best adjacent cell, and deposit when approximately full
  */
-public class Benchmark {
+public class RuleBot {
 
     private static Random rng;
     private static Game game;
@@ -21,18 +19,11 @@ public class Benchmark {
     }
 
     public static void main(final String[] args) {
-        final long rngSeed;
-        if (args.length > 1) {
-            rngSeed = Integer.parseInt(args[1]);
-        } else {
-            rngSeed = System.nanoTime();
-        }
-
-        rng = new Random(rngSeed);
+        rng = new Random(System.nanoTime());
         game = new Game();
-        game.ready("Benchmark");
+        game.ready("RuleBot");
 
-        Log.log("Successfully created bot! My Player ID is " + game.myId + ". Bot rng seed is " + rngSeed + ".");
+        Log.log("Successfully created bot! My Player ID is " + game.myId);
 
         for (;;) {
             game.updateFrame();
@@ -43,7 +34,7 @@ public class Benchmark {
             updateStatuses();
             addSpawns(commands);
             addMoves(getTargets(), commands);
-            logCommands(commands);
+            // logCommands(commands);
             game.endTurn(commands.values());
         }
     }
@@ -100,10 +91,7 @@ public class Benchmark {
      * Adds moves to the command queue based on target positions
      */
     private static void addMoves(Map<EntityId, Position> targets, Map<EntityId, Command> commands){
-        // map of obstructed ship id's to ship target positions
-        ArrayList<Ship> obstructedShips = new ArrayList<>();
-
-        // add moves for unobstructed ships
+        // add moves for ships
         for (Map.Entry<EntityId, Position> entry : targets.entrySet()){
             Ship ship = me.ships.get(entry.getKey());
             Position target = entry.getValue();
@@ -111,69 +99,15 @@ public class Benchmark {
                 commands.put(ship.id, ship.stayStill());
             } else {
                 Direction dir = gameMap.naiveNavigate(ship, target, false);
-                if (dir != Direction.STILL){
-                    commands.put(ship.id, ship.move(dir));
-                    gameMap.at(ship.position).markSafe();
-                } else {
-                    obstructedShips.add(ship);
-                }
+                commands.put(ship.id, ship.move(dir));
+                gameMap.at(ship.position).markSafe();
             }
         }
-
-        // swap obstructed ships that block each other
-        for (int i = 0; i < obstructedShips.size(); i++){
-            Ship ship = obstructedShips.get(i);
-            Position target = targets.get(ship.id);
-
-            for (Position unsafePos : gameMap.getUnsafePositions(ship.position, target)){
-                Ship neighbor = gameMap.at(unsafePos).ship;
-                if (neighbor != null && obstructedShips.contains(neighbor)){
-                    Position neighborsTarget = targets.get(neighbor.id);
-                    if (gameMap.getUnsafePositions(neighbor.position, neighborsTarget).contains(ship.position)){
-                        swapShips(ship, neighbor, commands);
-                        obstructedShips.remove(i--);
-                        obstructedShips.remove(neighbor);
-                        break;
-                    }
-                }
-            }
-            if (!commands.containsKey(ship.id)){
-                commands.put(ship.id, ship.stayStill());
-            }
-        }
-    }
-
-    /**
-     * Adds moves to commandQueue to swap ship1 and ship2
-     * Assumes ship1 and ship2 are at adjacent positions
-     */
-    private static void swapShips(Ship ship1, Ship ship2, Map<EntityId, Command> commands){
-        Command move1 = ship1.move(gameMap.getUnsafeMoves(ship1.position, ship2.position).get(0));
-        Command move2 = ship2.move(gameMap.getUnsafeMoves(ship2.position, ship1.position).get(0));
-        commands.put(ship1.id, move1);
-        commands.put(ship2.id, move2);
     }
 
     private static void addSpawns(Map<EntityId, Command> commands){
-        int numShips = me.ships.size();
-        boolean canSpawn = me.halite >= Constants.SHIP_COST && !gameMap.at(me.shipyard).isOccupied();
-        if ((numShips < 5 || numShips < 0.7 * me.halite / Constants.MAX_HALITE) && canSpawn){
+        if (me.ships.size() == 0) {
             commands.put(me.shipyard.id, Command.spawnShip());
-            //TODO: creating a dummy ship here is a shitty way of avoiding collisions with spawned ships
-            gameMap.at(me.shipyard).markUnsafe(new Ship(me.id, EntityId.NONE, me.shipyard.position, 0));
         }
-    }
-
-    /**
-     * @return A map of ship id -> ship of ships with given status
-     */
-    private static Map<EntityId, Ship> shipsWithStatus(Status status){
-        Map<EntityId, Ship> ships = new HashMap<>();
-        for (Ship ship : me.ships.values()){
-            if (statuses.containsKey(ship.id) && statuses.get(ship.id) == status){
-                ships.put(ship.id, ship);
-            }
-        }
-        return ships;
     }
 }

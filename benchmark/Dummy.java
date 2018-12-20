@@ -1,5 +1,3 @@
-package benchmark;
-
 import hlt.*;
 import java.util.ArrayList;
 
