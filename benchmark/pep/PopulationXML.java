@@ -20,7 +20,7 @@ import java.util.HashMap;
  */
 public class PopulationXML {
 
-    private static final String directory = "C:\\Users\\Pep\\IdeaProjects\\HaliteIII_Java\\src\\";
+    private static final String directory = "C:\\Users\\Pep\\Documents\\HaliteIII_519\\benchmark\\";
     private static DocumentBuilder documentBuilder;
     static int currentIndividual;
 

@@ -16,9 +16,6 @@ public class BehaviorManager {
     // static instances of each behavior for purpose of checking criteria
     private static Depositor depositor = new Depositor();
     private static Harvester harvester = new Harvester();
-    private static Scrubber  scrubber  = new Scrubber();
-    private static Scout     scout     = new Scout();
-    private static Blocker   blocker   = new Blocker();
 
     public static void updateBehaviors(Game game){
         for (Ship ship : game.me.ships.values()){
@@ -30,16 +27,10 @@ public class BehaviorManager {
                 continue;
             }
 
-            if (scrubber.meetsCriteria(ship, currentBehavior.getType(), game)){
-                behaviors.put(ship.id, new Scrubber());
-            } else if (harvester.meetsCriteria(ship, currentBehavior.getType(), game)){
+            if (harvester.meetsCriteria(ship, currentBehavior.getType(), game)){
                 behaviors.put(ship.id, new Harvester());
             } else if (depositor.meetsCriteria(ship, currentBehavior.getType(), game)){
                 behaviors.put(ship.id, new Depositor());
-            } else if (scout.meetsCriteria(ship, currentBehavior.getType(), game)){
-                behaviors.put(ship.id, new Scout());
-            } else if (blocker.meetsCriteria(ship, currentBehavior.getType(), game)){
-                behaviors.put(ship.id, new Blocker());
             }
         }
     }

@@ -25,12 +25,6 @@ public class GA {
         genes.put("scanDistanceBH",      new Gene("scanDistanceBH",      1.0, 10.0));
         genes.put("scanDistanceTH",      new Gene("scanDistanceTH",      1.0, 20.0));
         genes.put("thresholdTH",         new Gene("thresholdTH",         0.0, 0.2));
-        genes.put("minShips",            new Gene("minShips",            5.0, 30.0));
-        genes.put("maxSpawnTurn",        new Gene("maxSpawnTurn",        0.6, 1.0));
-        genes.put("minDropoffDistance",  new Gene("minDropoffDistance",  7.0, 20.0));
-        genes.put("dropoffDensity",      new Gene("dropoffDensity",      2.0, 15.0));
-        genes.put("dropoffLateTurn",     new Gene("dropoffLateTurn",     0.7, 1.0));
-        genes.put("scaledShipsMult",     new Gene("scaledShipsMult",     0.1, 0.9));
         genes.put("scarceLocalDist",     new Gene("scarceLocalDist",     1.0, 5.1));
         genes.put("scarceLocalMult",     new Gene("scarceLocalMult",     0.3, 1.5));
     }

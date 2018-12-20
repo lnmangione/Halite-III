@@ -32,35 +32,6 @@ public class Harvester extends Behavior {
         return (target != null) ? target : getAdjacent(ship, game);
     }
 
-    //TODO: tune parameters for attacking
-    public Position getAttackMove(Ship ship, Game game){
-        if (game.turnNumber > 0.67 * Constants.MAX_TURNS){
-            ArrayList<Ship> nearby = game.gameMap.shipsInRadius(ship.position, 3);
-            for (Ship neighbor : game.gameMap.shipsInRadius(ship.position, 1)){
-                if (!neighbor.owner.equals(game.me.id)){
-                    int allies = myShips(nearby, game);
-                    if (allies >= 0.67 * nearby.size() && ship.getHalite() * 2 < neighbor.getHalite() && neighbor.getHalite() >= 400){
-                        return neighbor.position;
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    /**
-     * @return The number of ships in "ships" that I own
-     */
-    private int myShips(ArrayList<Ship> ships, Game game){
-        int mine = 0;
-        for (Ship ship : ships){
-            if (ship.owner.equals(game.me.id)){
-                mine++;
-            }
-        }
-        return mine;
-    }
-
     @Override
     public boolean minimizesCost() {
         return false;

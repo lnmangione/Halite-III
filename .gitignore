@@ -6,3 +6,5 @@ benchmark/.idea/workspace.xml
 benchmark/benchmark.iml
 *.class
 *.log
+*.xml
+*.hlt

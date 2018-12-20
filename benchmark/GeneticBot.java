@@ -1,7 +1,7 @@
 import hlt.*;
 import pep.*;
 
-public class MyBot {
+public class GeneticBot {
 
     private static boolean isEvolving = false;
 
@@ -16,9 +16,7 @@ public class MyBot {
             Parameters.populateFromXML();
         }
 
-        Scout.findHeavyCells(game);
-
-        game.ready("lnmangione");
+        game.ready("GeneticBot");
         Log.log("Successfully created bot! My Player ID is " + game.myId + ".");
 
         for (;;) {
@@ -30,7 +28,6 @@ public class MyBot {
                     Parameters.writeFitness(game);
                 }
             }
-            Scout.updatePockets(game);
             BehaviorManager.updateBehaviors(game);
             CommandManager.updateCommands(game);
             // CommandManager.logCommands();

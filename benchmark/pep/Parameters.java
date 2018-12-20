@@ -11,8 +11,6 @@ public class Parameters {
     private static int currentId; // the ID of the current individual we are using the genes of
     private static int initialHalite;
 
-    //TODO: minShips needs to be evolved
-    //TODO: depositor late amount set manually
     public static void evolvedDefaults(){
         parameters.put("depositorAmount", 0.997); // amount of halite at which depositor should return
         parameters.put("depositorLateAmount", 0.040); // amount of halite in late game at which depositor should return
@@ -21,13 +19,7 @@ public class Parameters {
         parameters.put("scanDistanceBH", 6.566); // the distance scanned by a BestHarvester
         parameters.put("scanDistanceTH", 15.335); // the distance scanned by a ThresholdHarvester
         parameters.put("thresholdTH", 0.086); // the halite threshold a TH seeks
-        parameters.put("minShips", 15.0); // the absolute minimum number of ships to have
-        parameters.put("maxSpawnTurn", 0.667); // the max turn at which to spawn
-        parameters.put("minDropoffDistance", 12.3); // the min distance between dropoffs
-        parameters.put("dropoffDensity", 8.0); // the min density at which to create dropoff
-        parameters.put("dropoffLateTurn", 0.915); // turn at which not to create dropoff
         parameters.put("scarceMult", 0.579); // multiplier - amount of halite below which is considered scarce/not worth harvesting
-        parameters.put("scaledShipsMult", 0.32); // multiplier - how many ships to build based on map halite
         parameters.put("scarceLocalDist", 3.0); // local distance to scan to determine scarce halite
         parameters.put("scarceLocalMult", 0.67); // multiplier - average local halite -> scarce threshold
     }
@@ -99,41 +91,9 @@ public class Parameters {
     }
 
     /**
-     * Based on the absolute minimum number of ships that we always need
-     * Also based on a scaled minimum proportional to total map halite
-     *
-     * @return The minimum number of ships that should be built
-     */
-    static int getMinShips(Game game){
-        int absoluteMin = parameters.get("minShips").intValue();
-        double fullShips = (game.gameMap.getTotalHalite() / (double) Constants.MAX_HALITE) / (double) game.players.size();
-        int scaledMin = (int)(parameters.get("scaledShipsMult") * fullShips);
-        return Math.max(absoluteMin, scaledMin);
-    }
-
-    static int getMaxSpawnTurn(){
-        return (int)(parameters.get("maxSpawnTurn") * Constants.MAX_TURNS);
-    }
-
-    static int getMinDropoffDistance(){
-        return parameters.get("minDropoffDistance").intValue();
-    }
-
-    static double getDropoffDensity(){
-        return parameters.get("dropoffDensity") * Constants.MAX_HALITE;
-    }
-
-    static int getDropoffLateTurn(){
-        return (int)(parameters.get("dropoffLateTurn") * Constants.MAX_TURNS);
-    }
-
-    /**
      * @return The number of turns this ship needs to deposit late game
      */
     static int getDepositorLateTurns(Game game, Ship ship){
-//        if (game.players.size() == 2){
-//            return getBlockerTurns();
-//        }
         GameMap gameMap = game.gameMap;
         int dist = gameMap.calculateDistance(ship.position, gameMap.closestDropoff(game.me, ship.position));
         return parameters.get("depositorLateBuffer").intValue() + dist;
