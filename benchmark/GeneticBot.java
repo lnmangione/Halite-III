@@ -30,8 +30,17 @@ public class GeneticBot {
             }
             BehaviorManager.updateBehaviors(game);
             CommandManager.updateCommands(game);
+            writePerfomance(game);
             // CommandManager.logCommands();
             game.endTurn(CommandManager.getCommands());
         }
     }
+
+    private static void writePerfomance(Game game){
+        if (game.turnNumber == Constants.MAX_TURNS - 1){
+            String bankHalite = Integer.toString(game.me.halite - 4000);
+            TextLogger.writeLine("genetic.txt", bankHalite);
+        }
+    }
 }
+

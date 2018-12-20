@@ -12,16 +12,16 @@ public class Parameters {
     private static int initialHalite;
 
     public static void evolvedDefaults(){
-        parameters.put("depositorAmount", 0.997); // amount of halite at which depositor should return
-        parameters.put("depositorLateAmount", 0.040); // amount of halite in late game at which depositor should return
-        parameters.put("depositorLateBuffer", 12.0); // buffer for turn at which a depositor should return late game
-        parameters.put("percentBH", 0.11); // percentage of harvesters to make BestHarvester's
+        parameters.put("depositorAmount", 0.88); // amount of halite at which depositor should return
+        parameters.put("depositorLateAmount", 0.612); // amount of halite in late game at which depositor should return
+        parameters.put("depositorLateBuffer", 12.81); // buffer for turn at which a depositor should return late game
+//        parameters.put("percentBH", 0.11); // percentage of harvesters to make BestHarvester's
         parameters.put("scanDistanceBH", 6.566); // the distance scanned by a BestHarvester
-        parameters.put("scanDistanceTH", 15.335); // the distance scanned by a ThresholdHarvester
-        parameters.put("thresholdTH", 0.086); // the halite threshold a TH seeks
-        parameters.put("scarceMult", 0.579); // multiplier - amount of halite below which is considered scarce/not worth harvesting
-        parameters.put("scarceLocalDist", 3.0); // local distance to scan to determine scarce halite
-        parameters.put("scarceLocalMult", 0.67); // multiplier - average local halite -> scarce threshold
+        parameters.put("scanDistanceTH", 17.94); // the distance scanned by a ThresholdHarvester
+        parameters.put("thresholdTH", 0.179); // the halite threshold a TH seeks
+        parameters.put("scarceMult", 0.449); // multiplier - amount of halite below which is considered scarce/not worth harvesting
+        parameters.put("scarceLocalDist", 2.42); // local distance to scan to determine scarce halite
+        parameters.put("scarceLocalMult", 0.437); // multiplier - average local halite -> scarce threshold
     }
 
     // ===== Methods for instantiating parameters from an individual =====

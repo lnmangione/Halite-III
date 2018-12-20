@@ -10,8 +10,9 @@ public class Harvester extends Behavior {
     private InnerHarvester innerHarvester;
 
     Harvester(){
-        boolean isBH = Math.random() <= Parameters.getPercentBH();
-        innerHarvester = isBH ? new BestHarvester() : new ThresholdHarvester();
+        //boolean isBH = Math.random() <= Parameters.getPercentBH();
+        //innerHarvester = isBH ? new BestHarvester() : new ThresholdHarvester();
+        innerHarvester = new ThresholdHarvester();
     }
 
     @Override
@@ -24,10 +25,6 @@ public class Harvester extends Behavior {
 
     @Override
     public Position getTarget(Ship ship, Game game) {
-        // make room for new spawns early game
-        if (game.turnNumber < 20 && game.gameMap.at(ship).hasStructure()){
-            return getFreeAdjacent(ship, game);
-        }
         Position target = innerHarvester.getTarget(ship, game);
         return (target != null) ? target : getAdjacent(ship, game);
     }
@@ -52,20 +49,6 @@ public class Harvester extends Behavior {
 
         for (Position pos : ship.position.adjacentPositions()) {
             if (gameMap.at(pos).halite > 1.3 * gameMap.at(target).halite) {
-                target = pos;
-            }
-        }
-        return target;
-    }
-
-    /**
-     * @return The best free position to explore adjacent this ship
-     */
-    private Position getFreeAdjacent(Ship ship, Game game){
-        GameMap gameMap = game.gameMap;
-        Position target = ship.position;
-        for (Position pos : ship.position.adjacentPositions()) {
-            if (!gameMap.at(pos).isOccupied() && gameMap.at(pos).halite > gameMap.at(target).halite) {
                 target = pos;
             }
         }

@@ -54,7 +54,7 @@ public class RuleBot {
                 avgInitial = Integer.toString(avgHalite);
         }
         if (game.turnNumber == Constants.MAX_TURNS - 1){
-            String bankHalite = Integer.toString(me.halite);
+            String bankHalite = Integer.toString(me.halite  - 4000);
             TextLogger.writeLine("rule.txt", avgInitial + ", " + bankHalite);
         }
     }

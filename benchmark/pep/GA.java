@@ -20,7 +20,7 @@ public class GA {
         genes.put("depositorAmount",     new Gene("depositorAmount",     0.5, 1.0));
         genes.put("depositorLateAmount", new Gene("depositorLateAmount", 0.01, 0.7));
         genes.put("depositorLateBuffer", new Gene("depositorLateBuffer", 9.0, 15.0));
-        genes.put("percentBH",           new Gene("percentBH",           0.1, 0.9));
+//        genes.put("percentBH",           new Gene("percentBH",           0.1, 0.9));
         genes.put("scarceMult",          new Gene("scarceMult",          0.3, 1.5));
         genes.put("scanDistanceBH",      new Gene("scanDistanceBH",      1.0, 10.0));
         genes.put("scanDistanceTH",      new Gene("scanDistanceTH",      1.0, 20.0));
