@@ -1,4 +1,5 @@
 import hlt.*;
+import pep.TextLogger;
 
 import java.util.*;
 
@@ -13,6 +14,7 @@ public class RuleBot {
     private static Player me;
     private static GameMap gameMap;
     private static Map<EntityId, Status> statuses = new HashMap<>();
+    private static String avgInitial;
 
     private enum Status {
         EXPLORING, RETURNING
@@ -35,6 +37,7 @@ public class RuleBot {
             addSpawns(commands);
             addMoves(getTargets(), commands);
             // logCommands(commands);
+            writePerfomance();
             game.endTurn(commands.values());
         }
     }
@@ -42,6 +45,17 @@ public class RuleBot {
     private static void logCommands(Map<EntityId, Command> commands){
         for (Command cmd : commands.values()) {
             Log.log(cmd.command);
+        }
+    }
+
+    private static void writePerfomance(){
+        if (game.turnNumber == 1){
+                int avgHalite = gameMap.getTotalHalite() / (gameMap.width * gameMap.width);
+                avgInitial = Integer.toString(avgHalite);
+        }
+        if (game.turnNumber == Constants.MAX_TURNS - 1){
+            String bankHalite = Integer.toString(me.halite);
+            TextLogger.writeLine("rule.txt", avgInitial + ", " + bankHalite);
         }
     }
 
