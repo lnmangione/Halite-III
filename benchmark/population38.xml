@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<population avgFitness="0.055" currentId="0" fittest="0.058" generation="38">
+  <individual fitness="0.058" id="0">
+    <genes depositorAmount="0.943" depositorLateAmount="0.612" depositorLateBuffer="12.811" scanDistanceBH="8.295" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.056" id="1">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="12.893" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.056" id="2">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.056" id="3">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.056" id="4">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.164"/>
+  </individual>
+  <individual fitness="0.056" id="5">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="16.313" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.502" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.056" id="6">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.055" id="7">
+    <genes depositorAmount="1.0" depositorLateAmount="0.596" depositorLateBuffer="12.893" scanDistanceBH="8.295" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.376" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.054" id="8">
+    <genes depositorAmount="0.878" depositorLateAmount="0.242" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.253" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.376" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.055" id="9">
+    <genes depositorAmount="1.0" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.055" id="10">
+    <genes depositorAmount="0.99" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.054" id="11">
+    <genes depositorAmount="0.919" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="8.295" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.385" thresholdTH="0.164"/>
+  </individual>
+  <individual fitness="0.056" id="12">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.055" id="13">
+    <genes depositorAmount="0.99" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.055" id="14">
+    <genes depositorAmount="0.99" depositorLateAmount="0.612" depositorLateBuffer="12.893" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.385" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.055" id="15">
+    <genes depositorAmount="0.99" depositorLateAmount="0.61" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.164"/>
+  </individual>
+  <individual fitness="0.055" id="16">
+    <genes depositorAmount="0.99" depositorLateAmount="0.612" depositorLateBuffer="12.202" scanDistanceBH="7.16" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.164"/>
+  </individual>
+  <individual fitness="0.055" id="17">
+    <genes depositorAmount="0.99" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.164"/>
+  </individual>
+  <individual fitness="0.055" id="18">
+    <genes depositorAmount="0.99" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+  <individual fitness="0.056" id="19">
+    <genes depositorAmount="0.878" depositorLateAmount="0.612" depositorLateBuffer="11.98" scanDistanceBH="9.237" scanDistanceTH="17.941" scarceLocalDist="2.42" scarceLocalMult="0.437" scarceMult="0.449" thresholdTH="0.179"/>
+  </individual>
+</population>
