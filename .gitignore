@@ -8,3 +8,5 @@ benchmark/benchmark.iml
 *.log
 *.xml
 *.hlt
+.DS_Store
+*.pyc
