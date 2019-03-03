@@ -2,7 +2,7 @@
 
 ## Abstract
 
-In this paper, we experiment with applying machine learning to create computerized bots for Halite III, a resource-management game. We focus on a single-player, single-ship game, and develop two classifiers: one using Support Vector Machine with Supervised Learning, and one using a Deep Neural Network with Reinforcement Learning. We evaluate the performance of each of these bots against two benchmark bots, one simple rule-based bot and one genetically-tuned rule-based bot. We find that the machine learning bots successfully learn gameplay, and performing at a level between the two benchmarks.
+In this paper, we apply machine learning to create computerized bots for Halite III, a resource-management game. We focus on a single-player, single-ship game, and develop two classifiers: one using Support Vector Machine with Supervised Learning, and one using a Deep Neural Network with Reinforcement Learning. We evaluate the performance of each of these bots against two benchmark bots, one simple rule-based bot and one genetically-tuned rule-based bot. We find that the machine learning bots successfully learn gameplay, and performing at a level between the two benchmarks.
 
 ## 1 Introduction
 
