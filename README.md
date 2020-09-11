@@ -1,3 +1,11 @@
+
+<p align="center">
+  <img src="https://github.com/lnmangione/Halite-III/blob/master/graphics/halite2p.gif">
+</p>
+<p align="center">
+  <text>A 2 player game of Halite III</text>
+</p>
+
 # Mastering Halite with Reinforcement Learning
 
 ## Abstract
@@ -17,6 +25,15 @@ Players each start the game with 5,000 stored halite, a shipyard, and knowledge 
 Ships can make one action per turn: they can move one unit in any cardinal direction, collect halite from the sea in their current position, or convert into dropoffs. When a ship is over a friendly shipyard or dropoff, it automatically deposits its halite cargo increasing the player's collected halite.
 
 Each turn, the game engine sends the players the positions of all ships and dropoffs, and an updated game map. Players have up to two seconds to issue their commands for the turn. The game engine will parse and execute the commands, calculating each player’s resulting halite score and resolving all movement. The game continues for 400 to 500 turns, depending on the game map size. The winner of the game is the player who has the most collected halite at the end.
+
+<p align="center">
+  <kbd>
+    <img width="460" src="https://github.com/lnmangione/Halite-III/blob/master/graphics/fig1.png">
+  </kbd>
+</p>
+<p align="center">
+    <text> Figure 1: The Halite III Game Board </text>
+</p>
 
 An example of a particular instance of a game state for Halite is shown in Figure 1. For more information about the rules and recordings of games of Halite III, visit the website, halite.io.
 
@@ -101,6 +118,24 @@ We ran this custom algorithm for 200 generations with 20 individuals per generat
 
 
 ### 3.3 Results
+
+<p align="center">
+  <kbd>
+    <img width="460" src="https://github.com/lnmangione/Halite-III/blob/master/graphics/fig2.png">
+  </kbd>
+</p>
+<p align="center">
+    <text> Figure 2</text>
+</p>
+
+<p align="center">
+  <kbd>
+    <img width="460" src="https://github.com/lnmangione/Halite-III/blob/master/graphics/fig3.png">
+  </kbd>
+</p>
+<p align="center">
+    <text> Figure 3</text>
+</p>
 
 For each of the 500 games played by the four bots, we record the total halite deposited and the average halite per map cell. Figure 2 depicts a scatter plot of each of the 2000 data points, with average cell halite plotted on the X-axis and total halite collected on the Y-axis. Figure 3 depicts the trailing average with period 16 of this same data. We chose this metric, as dense halite maps naturally result in more collected halite, so it is insufficient to simply compare average collection amounts over the 500 games.
 
